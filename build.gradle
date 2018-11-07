@@ -1,0 +1,43 @@
+
+apply plugin: 'war'
+
+sourceCompatibility = '1.8'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+war.destinationDir = file "C:\\Program Files\\wildfly-11.0.0.Final\\standalone\\deployments\\"
+
+// NetBeans will automatically add "run" and "debug" tasks relying on the
+// "mainClass" property. You may however define the property prior executing
+// tasks by passing a "-PmainClass=<QUALIFIED_CLASS_NAME>" argument.
+//
+// Note however, that you may define your own "run" and "debug" task if you
+// prefer. In this case NetBeans will not add these tasks but you may rely on
+// your own implementation.
+if (!hasProperty('mainClass')) {
+    ext.mainClass = ''
+}
+
+repositories {
+    mavenCentral()
+    // You may define additional repositories, or even remove "mavenCentral()".
+    // Read more about repositories here:
+    //   http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:repositories
+}
+
+dependencies {
+    //testCompile group: 'junit', name: 'junit', version: '4.10'
+    providedCompile 'javax.servlet:servlet-api:2.5'
+    runtime 'javax.servlet:jstl:1.1.2'
+    
+    compile "org.zkoss.zk:zk:${zkVersion}"
+    compile "org.zkoss.zk:zkbind:${zkVersion}"
+    compile "org.zkoss.zk:zkplus:${zkVersion}"  /*optional enable for 3rd party framework integration support */
+    //compile "org.zkoss.zk:zkex:${zkVersion}"    /*ZK PE*/
+    //compile "org.zkoss.zk:zkmax:${zkVersion}"   /*ZK EE*/
+    //compile "org.zkoss.zk:zuti:${zkVersion}"    /*optional enable for shadow elements support */
+    //compile "org.zkoss.zk:zhtml:${zkVersion}"   /*optional enable for xhtml component support */
+    
+    runtime "org.zkoss.zk:zk:${zkVersion}"
+    runtime "org.zkoss.zk:zkbind:${zkVersion}"
+    runtime "org.zkoss.zk:zkplus:${zkVersion}" 
+}
