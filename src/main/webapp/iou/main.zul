@@ -1,45 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<zk>
-    <listbox id="box" multiple="true" checkmark="true">
-        <listhead>
-            <listheader label="CCCName" />
-            <listheader label="Gender" />
-            <listheader label="Age" />
-        </listhead>
-        <listitem>
-            <listcell label="Mary" />
-            <listcell label="FEMALE" />
-            <listcell label="18" />
-        </listitem>
-        <listitem>
-            <listcell label="John" />
-            <listcell label="MALE" />
-            <listcell label="20" />
-        </listitem>
-        <listitem>
-            <listcell label="Jane" />
-            <listcell label="FEMALE" />
-            <listcell label="32" />
-        </listitem>
-        <listitem>
-            <listcell label="Henry" />
-            <listcell label="MALE" />
-            <listcell label="29" />
-        </listitem>
-    <listitem>
-      <listcell label="Mark" />
-      <listcell label="MALE" />
-      <listcell label="15" />
-    </listitem>
-    <listitem>
-      <listcell label="Jeffery" />
-      <listcell label="MALE" />
-      <listcell label="17" />
-    </listitem>
-    <listitem>
-      <listcell label="Rebecca" />
-      <listcell label="FEMALE" />
-      <listcell label="21" />
-    </listitem>
-    </listbox>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window viewModel="@id('vm') @init('com.wanhai.iou.IOU_VM')">
+        <vlayout>
+        <label value="@load(vm.fields1)"/>
+        <button label="query" onClick="@command('dQuery')"/>
+            <listbox id="box" multiple="true" checkmark="true">
+                <listhead>
+                    <listheader label="CCCName" />
+                    <listheader label="Gender" />
+                    <listheader label="Age" />
+                </listhead>
+                <listitem>
+                    <listcell label="Mary" />
+                    <listcell label="FEMALE" />
+                    <listcell label="18" />
+                </listitem>
+                <listitem>
+                    <listcell label="John" />
+                    <listcell label="MALE" />
+                    <listcell label="20" />
+                </listitem>
+                <listitem>
+                    <listcell label="Jane" />
+                    <listcell label="FEMALE" />
+                    <listcell label="32" />
+                </listitem>
+                <listitem>
+                    <listcell label="Henry" />
+                    <listcell label="MALE" />
+                    <listcell label="29" />
+                </listitem>
+                <listitem>
+                  <listcell label="Mark" />
+                  <listcell label="MALE" />
+                  <listcell label="15" />
+                </listitem>
+                <listitem>
+                  <listcell label="Jeffery" />
+                  <listcell label="MALE" />
+                  <listcell label="17" />
+                </listitem>
+                <listitem>
+                  <listcell label="Rebecca" />
+                  <listcell label="FEMALE" />
+                  <listcell label="21" />
+                </listitem>
+            </listbox>
+        </vlayout>
+    </window>
 </zk>
