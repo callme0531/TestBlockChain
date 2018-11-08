@@ -4,7 +4,7 @@ apply plugin: 'war'
 sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
-war.destinationDir = file "C:\\Program Files\\wildfly-11.0.0.Final\\standalone\\deployments\\"
+war.destinationDir = file "$buildDir"
 
 // NetBeans will automatically add "run" and "debug" tasks relying on the
 // "mainClass" property. You may however define the property prior executing
